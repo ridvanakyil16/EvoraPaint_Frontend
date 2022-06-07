@@ -1,0 +1,188 @@
+<br><br><br><br><br><br>
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <h4 style="margin-bottom: 20px">Ürün Düzenle</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <form [formGroup]="formForNames">
+
+      <span
+        *ngIf="
+          !formForNames.get('name')?.valid &&
+          formForNames.get('name')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir ürün seçiniz.</span>
+      <div class="input-group mb-3" style="width: 360px">
+        <span class="input-group-text" id="basic-addon1" style="width: 120px"
+        >Ürün</span
+        >
+        <input
+          class="form-control"
+          type="text"
+          list="datalistOptions"
+          placeholder="Getir..."
+          (change)="getProductByName($event)"
+          formControlName="name"
+        />
+        <datalist id="datalistOptions">
+          <option *ngFor="let pro of products">
+            {{ pro.name }}
+          </option>
+        </datalist>
+      </div>
+
+      <hr />
+
+      <span
+        *ngIf="
+          !formForNames.get('categoryName')?.valid &&
+          formForNames.get('categoryName')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir kategori seçiniz.</span
+      >
+      <div class="input-group mb-3" style="width: 360px">
+        <span class="input-group-text" id="basic-addon2" style="width: 120px"
+        >Kategori</span
+        >
+        <input
+          class="form-control"
+          type="text"
+          list="datalistOptions1"
+          (change)="getCategoryByName($event)"
+          formControlName="categoryName"
+        />
+        <datalist id="datalistOptions1">
+          <option *ngFor="let cat of categories">
+            {{ cat.name }}
+          </option>
+        </datalist>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <form [formGroup]="productForm">
+
+      <span
+        *ngIf="
+          !productForm.get('name')?.valid &&
+          productForm.get('name')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir ürün adı giriniz.</span
+      >
+      <div class="input-group mb-3" style="margin-bottom: 20px; width: 360px">
+        <span class="input-group-text" id="basic-addon3" style="width: 120px"
+        >Ürün Adı</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          formControlName="name"
+        />
+      </div>
+
+      <span
+        *ngIf="
+          !productForm.get('brandName')?.valid &&
+          productForm.get('brandName')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir marka giriniz.</span
+      >
+      <div class="input-group mb-3" style="margin-bottom: 20px; width: 360px">
+        <span class="input-group-text" id="basic-addon3" style="width: 120px"
+        >Marka</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          formControlName="brandName"
+        />
+      </div>
+
+      <span
+        *ngIf="
+          !productForm.get('colorName')?.valid &&
+          productForm.get('colorName')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir renk giriniz.</span
+      >
+      <div class="input-group mb-3" style="margin-bottom: 20px; width: 360px">
+        <span class="input-group-text" id="basic-addon3" style="width: 120px"
+        >renk</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          formControlName="colorName"
+        />
+      </div>
+
+      <span
+        *ngIf="
+          !productForm.get('description')?.valid &&
+          productForm.get('description')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir açıklama giriniz.</span
+      >
+      <div class="input-group mb-3" style="margin-bottom: 20px; width: 360px">
+        <span class="input-group-text" id="basic-addon4" style="width: 120px"
+        >Açıklama</span
+        >
+        <textarea class="form-control" formControlName="description" rows="2">
+        </textarea>
+      </div>
+
+      <span
+        *ngIf="
+          !productForm.get('unitPrice')?.valid &&
+          productForm.get('unitPrice')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir fiyat giriniz.</span
+      >
+      <div class="input-group mb-3" style="margin-bottom: 20px; width: 360px">
+        <span class="input-group-text" id="basic-addon5" style="width: 120px"
+        >Fiyat</span
+        >
+        <input
+          type="number"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          formControlName="unitPrice"
+        />
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <div class="btn-group" role="group">
+      <button class="btn btn-success" (click)="update()" style="width: 180px">
+        Güncelle
+      </button>
+      <button class="btn btn-dark" (click)="delete()" style="width: 180px">
+        Sil
+      </button>
+    </div>
+  </div>
+</div>
+
+<br><br>
+

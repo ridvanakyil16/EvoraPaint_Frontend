@@ -1,0 +1,19 @@
+/* Sponsor Section Start */
+
+.sponsor-section {
+    margin: auto;
+}
+
+.sponsor-section .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.sponsor-section .item img {
+    width: 150px;
+}
+
+
+/* Sponsor Section End */

@@ -1,0 +1,19 @@
+.form {
+    max-width: 700px;
+    margin: auto;
+}
+.button-width{
+  width: 400px;
+}
+.input-width{
+  width: 400px;
+}
+.input-width span{
+  width: 140px;
+}
+@media(max-width:450px)
+{
+  .input-width{
+    max-width: 400px;
+  }
+}

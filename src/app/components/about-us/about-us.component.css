@@ -1,0 +1,103 @@
+.parallax-header{
+  background: #000;
+  background: linear-gradient(
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.8)
+  ),
+  url(../../../assets/IMAGES/banner-img/kurumsal2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-content{
+  padding: 20% 0;
+}
+
+.content{
+  border-radius-topleft: 50px;
+  margin-top: -12%;
+  background: #fff;
+  box-shadow: 0 0 20px -6px rgba(0,0,0,0.2);
+}
+
+.content .left{
+  padding: 35px;
+  font-size: 16px;
+}
+.content .left p{
+  margin: 0;
+}
+.content .right{
+  padding: 0;
+}
+
+.text-justify{
+  text-align: justify;
+}
+.img{
+  width: 75%;
+}
+
+.position-img{
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 40%;
+}
+.myhref{
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1px solid #55534C;
+  color: #55534C;
+}
+.my-margin{
+  padding-left: 40px;
+  padding-right: 0;
+}
+@media(max-width:1200px){
+  .content .left{
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .content .right{
+    padding: 0;
+  }
+}
+@media(max-width:768px){
+  .content .right{
+    order: 1;
+  }
+  .content .left{
+    order: 2;
+  }
+  .my-margin{
+    margin-top: 5%;
+    margin-bottom: 20px;
+    padding:  0;
+  }
+}
+@media(max-width:576px){
+  .img{
+    width: 100%;
+  }
+  .position-img{
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 50%;
+  }
+  .my-center{
+    text-align: center;
+  }
+  .my-margin{
+    padding: 20px;
+    margin-top: 20%;
+  }
+  .header-content{
+    padding: 100px 0px 10% 0px;
+    margin-bottom: 20px;
+  }
+}

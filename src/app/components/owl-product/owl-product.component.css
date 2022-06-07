@@ -1,0 +1,163 @@
+  /* Owl Carousel Product Start */
+  
+  .owl-carousel-section {
+      max-width: 1200px;
+      display: flex;
+      margin: auto;
+  }
+  
+  .owl-carousel-section .write-section {
+      width: 10%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      font-size: 30px;
+      color: #000;
+      font-weight: 600;
+  }
+  
+  .owl-carousel-section .write-section .verticle {
+      width: 4px;
+      height: 70px;
+      background-color: #000;
+      margin-bottom: 30px;
+  }
+  
+  .owl-carousel-section .write-section .filter {
+      transform: rotate(270deg);
+  }
+  
+  .owl-carousel-section .owl-section {
+      width: 90%;
+      margin-bottom: 50px;
+  }
+  
+  .owl-carousel-product {
+      max-width: 100%;
+      margin: auto;
+  }
+  
+  .owl-carousel-product .item {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .owl-carousel-product .item .card {
+      border: 0px;
+      height: 350px;
+      transition: 0.3s ease-in-out;
+      box-sizing: border-box;
+  }
+  
+  .owl-carousel-product .card .card-img {
+      border: 0px;
+      overflow: hidden;
+      cursor: pointer;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F6F6F6;
+      position: relative;
+  }
+  
+  .owl-carousel-product .card .card-body {
+      padding: 0;
+      padding-top: 15px;
+      border: 0px;
+      height: 100px;
+      cursor: pointer;
+      position: relative;
+  }
+  
+  .owl-carousel-product .card .card-body span:nth-child(1) {
+      font-size: 11px;
+      color: #868585;
+      font-weight: 600;
+  }
+  
+  .owl-carousel-product .card .card-body span:nth-child(3) {
+      font-size: 16px;
+      color: #000;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+  }
+  
+  .owl-carousel-product .card .card-body span:nth-child(5) {
+      font-size: 13px;
+      color: #000;
+      font-weight: 500;
+  }
+  
+  .owl-carousel-product .card .card-body span:nth-child(6) {
+      position: absolute;
+      bottom: 20%;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #F6F6F6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .owl-carousel-product .card img {
+      height: 70%;
+      width: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: 1s;
+  }
+  
+  .owl-carousel-product .card .img-2 {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+  }
+  
+  .owl-carousel-product .card:hover img {
+      transform: scale(1.2);
+  }
+  
+  .owl-carousel-product .card:hover .img-2 {
+      transform: scale(1.5);
+  }
+  
+  .owl-top {
+      max-width: 1000px;
+      padding-left: 52px;
+      margin: auto;
+  }
+  
+  .owl-title {
+      font-size: 90px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      white-space: nowrap;
+  }
+  
+  .owl-title span:nth-child(1) {
+      color: black;
+  }
+  
+  .owl-title span:nth-child(2) {
+      color: black;
+      color: white;
+      text-shadow: 0px 0px 2px #000;
+  }
+  
+  .owl-category {
+      margin-bottom: 30px;
+  }
+  
+  .owl-category span {
+      font-weight: 600;
+      color: #000;
+      font-size: 12px;
+      margin-right: 3%;
+      cursor: pointer;
+  }
+  /* Owl Carousel Product End */

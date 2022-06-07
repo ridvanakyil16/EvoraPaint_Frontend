@@ -1,0 +1,315 @@
+<!-- Home Section Start -->
+<div class="container-fluid p-0 m-0">
+    <div id="home-page">
+        <div class="row">
+            <div class="col-md-6 p-0 m-0">
+                <div class="content-section">
+                    <div class="logo">
+                        <div class="logo-top">
+                            <!-- <img src="assets/IMAGES/product_img/img_8.png" alt=""> -->
+                        </div>
+                        <div class="in-content">
+
+                        </div>
+                        <div class="logo-alt">
+                            <div class="logo-alt-top">
+                                <p>@Copyright 2018</p>
+                            </div>
+                            <div class="logo-alt-alt"></div>
+                        </div>
+                    </div>
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="#!">HomePage</a></li>
+                            <li><a href="#!">Team</a></li>
+                            <li><a href="#!">Service</a></li>
+                            <li><a href="#!">Contact</a></li>
+                        </ul>
+                        <div class="in-content">
+                            <div class="in-content-top">
+                                <span>{{'Color Paints' | translate}}</span>
+                                <span>Evora Paint</span>
+                            </div>
+                            <div class="in-content-alt">
+                                <span class="span1">{{'Export to More Than Ten Countries' | translate}}</span>
+                                <br>
+                                <span class="span2">{{'We are with you with our reliable staff and quality products.' | translate}}</span>
+                                <br><br>
+                                <button>
+                                  {{'Go to the blog' | translate}}
+                            </button>
+                            </div>
+                        </div>
+                        <div class="navbar-alt">
+                            <div class="navbar-alt-top">
+                                <p>Home/Catalog/Brands/Nike ACG</p>
+                            </div>
+                            <div class="navbar-alt-alt"></div>
+                        </div>
+                    </div>
+                </div>
+              <div class="mobil-img">
+                <img src="assets/IMAGES/home-img/pngwing.com.png" alt="">
+              </div>
+            </div>
+            <div class="col-md-6 p-0 m-0 mobil-block">
+                <div class="img-section">
+                    <img src="assets/IMAGES/home-img/pngwing.com.png" alt="">
+                    <button>
+                      {{'Unique' | translate}}
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home Section End -->
+
+<br><br><br><br>
+
+<!-- Owl Carousel Category Start -->
+<!--<div class="owl-carousel-category owl-theme">
+  <owl-carousel-o [options]="owlOptions_category">
+    <ng-template carouselSlide *ngFor="let category of categories; let i = index">
+      <div class="item">
+        <div class="box my-secondary">
+          <img style="position: absolute; top: 0; left:0; width: 100%; height: 100%; object-fit: cover" src="assets/IMAGES/category-img/dazzle.png">
+          <span style="transform: rotate(340deg); z-index: 1000; font-size: 13px; font-weight: bold">{{category.name}}</span>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>-->
+<!-- Owl Carousel Category End -->
+
+<br><br><br>
+
+<!-- Promotional Product Start -->
+<!--<div class="container promotional-product">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="content">
+        <h1>BU ÜRÜNDE KAMPANYA</h1>
+        <h4 class="product-details"><a href="#!"><span>Ürüne Göz At</span> <span class="span2"><i class="fas fa-arrow-right"></i></span></a></h4>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="product">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#000000" d="M49.5,-47.1C64.7,-34.4,77.8,-17.2,77.8,0C77.7,17.1,64.5,34.2,49.4,44.2C34.2,54.1,17.1,57,0.4,56.6C-16.4,56.2,-32.7,52.7,-44.6,42.7C-56.4,32.7,-63.8,16.4,-67.2,-3.4C-70.6,-23.2,-70.1,-46.5,-58.3,-59.2C-46.5,-71.9,-23.2,-74,-3,-71C17.2,-68,34.4,-59.8,49.5,-47.1Z" transform="translate(100 100)" />
+        </svg>
+        <img src="assets/IMAGES/product_img/img_4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Promotional Product End -->
+<!--
+
+<br><br><br><br>
+-->
+
+<!-- Owl Carousel Product Start -->
+<div class="owl-top">
+  <h1 class="owl-title"><span class="text-dark">New</span> <span class="my-shadow"> and </span> <span class="text-dark">High</span> <span class="my-shadow"> Quality</span></h1>
+  <br>
+</div>
+
+<div id="astar" *ngFor="let category of categories; let i=index" class="owl-carousel-section anchor">
+  <div class="write-section">
+    <div class="verticle">
+    </div>
+    <div class="filter">
+      <div class="div">{{category.name}}</div>
+    </div>
+  </div>
+
+  <div class="owl-section">
+    <div class="owl-carousel-product">
+      <owl-carousel-o [options]="owlOptions_product">
+        <ng-template carouselSlide *ngFor="let product of this[category.name + i]">
+          <div class="item">
+            <div class="card" style="width: 18rem;" (dblclick)="setCurrentProduct(product)">
+              <div class="card-img">
+                <img *ngIf="product.productImage" [src]="apiUrl + product.productImage" class="card-img-top" alt="...">
+                <img   class="img-2" src="assets/IMAGES/product_img/img-2.png" alt="">
+              </div>
+              <div class="card-body">
+                <span>{{product.categoryName}}</span><br>
+                <a (click)="setCurrentProduct(product)">{{product.name}}</a><br>
+                <span>{{product.unitPrice}} {{"$" | translate}}</span>
+                <span>+</span>
+              </div>
+              <div class="m-auto mt-2 w-100">
+                <a type="button" *ngIf="userIsAdmin" routerLink="productUpdate/{{product.id}}" class="btn btn-success my-btn">Ürün Güncelle</a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <br><br>
+  </div>
+</div>
+
+<br><br><br><br><br>
+
+<!-- Parallax One Start -->
+<div class="parallax-one">
+  <div class="section-one">
+    <div class="content-section">
+      <div class="in-content-two">
+        <span>$ 29.95</span><br>
+        <span>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Sapiente, illo.</span><br>
+        <button>
+          {{"Go To Product" | translate}}
+        </button>
+      </div>
+    </div>
+    <div class="img-section">
+      <img style="height: 150%" src="assets/IMAGES/banner-img/_Pngtree_classic_blue_paint_bucket_3d_5302594-removebg-preview.png" alt="">
+    </div>
+  </div>
+  <div class="section-two">
+    <div class="owl-carousel-parallax owl-theme">
+      <owl-carousel-o [options]="owlOptions_parallax_product">
+        <ng-template carouselSlide *ngFor="let product of products">
+          <div class="item">
+            <div class="box">
+              <div class="img-section">
+                <img *ngIf="product.productImage" [src]="apiUrl + product.productImage" class="card-img-top" alt="...">
+              </div>
+              <div class="content-section">
+                <div class="border"></div>
+                <span (click)="setCurrentProduct(product)">{{product.name}}</span>
+                <h5>{{product.unitPrice}}</h5>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
+<!-- Parallax One End -->
+
+<br><br><br><br><br>
+
+<!-- Sponsor Section Start -->
+
+<div class="container sponsor-section pt-5 pb-5 mb-5">
+  <owl-carousel-o [options]="owlOptions_sponsor">
+    <ng-template carouselSlide>
+      <div class="item">
+        <img src="assets/IMAGES/sponsor-img/sponsor-1.png" alt="">
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="item">
+        <img src="assets/IMAGES/sponsor-img/sponsor-2.png" alt="">
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="item">
+        <img src="assets/IMAGES/sponsor-img/sponsor-3.png" alt="">
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="item">
+        <img src="assets/IMAGES/sponsor-img/sponsor-4.png" alt="">
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="item">
+        <img src="assets/IMAGES/sponsor-img/sponsor-5.png" alt="">
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+
+<!-- Sponsor Section End -->
+
+<br><br>
+
+<!-- Blog Section Start -->
+<h1 style="text-align: center;" class="mb-5">{{'Blog' | translate}}</h1>
+
+<div class="blog">
+  <div class="container p-0">
+    <div class="row ">
+      <div class="col-md-6 p-0 img-section">
+        <img src="assets/IMAGES/blog-img/enzo-tommasi-wlxJ4idMTUk-unsplash.jpg" alt="">
+      </div>
+      <div class="col-md-6 p-0 content-section">
+        <div class=" title-blog">
+          <div></div>
+          <span>Design</span>
+        </div>
+        <br>
+        <p>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus delectus inventore minima explicabo veniam deleniti iure eius deserunt, tenetur voluptates?</span>
+          <br><br>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia perferendis assumenda ut soluta esse, fuga officia quo ipsa</span>
+          <br><br>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia perferendis assumenda ut soluta esse, fuga officia quo ipsa</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 p-0 content-section blog-content-right blog-3">
+        <div class="title-blog">
+          <div></div>
+          <span>Design</span>
+        </div>
+        <br>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet quo deleniti quos impedit repudiandae quasi ullam, dicta tempora iusto, quam, atque laboriosam assumenda ad veritatis deserunt laudantium ducimus accusamus officiis?</p>
+      </div>
+      <div class="col-md-6 p-0 img-section blog-4">
+        <img src="assets/IMAGES/product_img/img_6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 p-0 img-section blog-5">
+        <img src="assets/IMAGES/blog-img/jon-tyson-dTv3VwTvT0c-unsplash.jpg" alt="">
+      </div>
+      <div class="col-md-6 p-0 content-section blog-6">
+        <div class="title-blog">
+          <div></div>
+          <span>Design</span>
+        </div>
+        <br>
+        <p>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus delectus inventore minima explicabo veniam deleniti iure eius deserunt, tenetur voluptates?</span>
+          <br><br>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia perferendis assumenda ut soluta esse, fuga officia quo ipsa</span>
+          <br><br>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia perferendis assumenda ut soluta esse, fuga officia quo ipsa</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 p-0 content-section blog-content-right blog-7">
+        <div class="title-blog">
+          <div></div>
+          <span>Design</span>
+        </div>
+        <br>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet quo deleniti quos impedit repudiandae quasi ullam, dicta tempora iusto, quam, atque laboriosam assumenda ad veritatis deserunt laudantium ducimus accusamus officiis?</p>
+      </div>
+      <div class="col-md-6 p-0 img-section blog-8">
+        <img src="assets/IMAGES/product_img/img_6.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Blog Section End -->
+
+
+
+
+
+
+

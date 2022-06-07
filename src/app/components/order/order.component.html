@@ -1,0 +1,138 @@
+<br><br><br><br><br><br><br><br>
+    <div class="card m-auto mb-3 p-3" style="max-width: 650px;">
+      <form [formGroup]="orderAddForm">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="{{firstproductImage}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">{{productDetails.name}}</h5>
+              <p class="card-text" style="height: 150px; overflow-y: scroll">{{productDetails.description}}</p>
+            </div>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush mt-4">
+          <li class="list-group-item"><span style="font-size: 18px;  font-weight: 500">Ürün Adı :</span> &nbsp; {{productDetails.name}}</li>
+          <li class="list-group-item"><span style="font-size: 18px; font-weight: 500">Marka :</span> &nbsp; {{productDetails.brandName}}</li>
+          <li class="list-group-item"><span style="font-size: 18px; font-weight: 500">Renk :</span> &nbsp; {{productDetails.colorName}}</li>
+        </ul>
+        <p style="font-size: 14px" class="mt-4">Bu ürünü sipariş vermek istiyorsanız aşağıdaki bilgileri doldurup 'Sipariş Ver'e tıklayın. 24 saat içinde geri dönüş telefon numaranız üzerinden sağlanacaktır.</p>
+
+        <!-- Stock Section Start -->
+        <span
+        *ngIf="
+      !orderAddForm.get('UnitAmount')?.valid &&
+      orderAddForm.get('UnitAmount')?.touched
+    " class="help-block">Lütfen geçerli bir stok giriniz.</span
+      >
+        <div class="input-group mb-3" style="width: 360px">
+    <span class="input-group-text" id="basic-addon3" style="width: 120px"
+    >Stok</span
+    >
+        <input
+          class="form-control"
+          type="number"
+          aria-describedby="basic-addon1"
+          formControlName="UnitAmount"
+        />
+      </div>
+        <!-- Stock Section End -->
+
+        <!-- Name Surname Section Start -->
+        <span
+        *ngIf="
+            !orderAddForm.get('SenderNameSurname')?.valid &&
+            orderAddForm.get('SenderNameSurname')?.touched
+          " class="help-block">Lütfen geçerli bir ad soyad giriniz.</span>
+        <div class="input-group mb-3" style="width: 360px">
+          <span class="input-group-text" id="basic-addon4" style="width: 120px"
+          >Ad Soyad</span
+          >
+        <input
+          class="form-control"
+          type="text"
+          aria-describedby="basic-addon1"
+          formControlName="SenderNameSurname"
+        />
+      </div>
+        <!-- Name Surname Section End -->
+
+        <!-- Email Section Start -->
+        <span
+        *ngIf="
+            !orderAddForm.get('SenderMail')?.valid &&
+            orderAddForm.get('SenderMail')?.touched
+          "
+        class="help-block"
+      >Lütfen geçerli bir mail adresi giriniz.</span
+      >
+        <div class="input-group mb-3" style="width: 360px">
+          <span class="input-group-text" id="basic-addon5" style="width: 120px"
+          >Email</span
+          >
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          formControlName="SenderMail"
+        />
+      </div>
+        <!-- Email Section End -->
+
+        <!-- Tel No Section Start -->
+        <span
+        *ngIf="
+          !orderAddForm.get('SenderPhone')?.valid &&
+          orderAddForm.get('SenderPhone')?.touched
+        "
+        class="help-block"
+      >Lütfen geçerli bir telefon numarası giriniz.</span
+      >
+        <div class="input-group mb-3" style="margin-bottom: 20px; width: 360px">
+        <span class="input-group-text" id="basic-addon6" style="width: 120px"
+        >Tel No</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          formControlName="SenderPhone"
+        />
+      </div>
+        <!-- Tel No Section End -->
+      </form>
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary" (click)="orderAdd()" style="width: 360px">
+            Ekle
+          </button>
+        </div>
+      </div>
+    </div>
+<br><br><br><br>
+
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <div
+      *ngIf="isAdded"
+      class="alert alert-success"
+      role="alert"
+      style="margin-top: 20px; width: 360px"
+    >
+      {{ message }}
+    </div>
+
+    <div
+      *ngIf="formError"
+      class="alert alert-danger"
+      role="alert"
+      style="margin-top: 20px; width: 360px"
+    >
+      {{ message }}
+    </div>
+  </div>
+</div>
+
+<br><br>
+

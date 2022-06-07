@@ -1,0 +1,344 @@
+<div *ngIf="productDetails">
+  <br><br><br><br><br>
+
+  <!-- Product Detail Start -->
+  <div class="container product-detail p-0" >
+    <div class="row">
+      <div class="col-md-7 p-0">
+        <div class="img-section">
+          <div class="img-section-one">
+            <div class="img" *ngFor="let image of productImages">
+              <div *ngIf="productImages" (click)="imageChange(image)" class="in-image">
+                <img src="{{image.imagePath}}" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="img-section-two">
+            <div class="img">
+              <img src="{{firstproductImage}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="content-section">
+          <h4 *ngIf="productDetails">{{productDetails.name}}</h4>
+          <p><span><i class="fas fa-check-circle"></i> &nbsp; {{"Vendor assurance" | translate}}</span></p>
+          <h3>{{productDetails.unitPrice}}</h3>
+          <p class="property">
+            <span><span>{{"Brand" | translate}}</span> : {{productDetails.brandName}}</span><br>
+            <span><span>{{"Category" | translate}}</span> : {{productDetails.categoryName}}</span><br>
+            <span><span>{{"Color" | translate}}</span> : {{productDetails.colorName}}</span><br>
+          </p>
+          <div class="model">
+            <div class="box">2.5</div>
+            <div class="box">5</div>
+            <div class="box">7.5</div>
+            <div class="box">10</div>
+            <div class="box">15</div>
+            <div class="box">17.5</div>
+            <div class="box">20</div>
+            <div class="box">25</div>
+          </div>
+          <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" >{{"Order Now" | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Product Detail End -->
+
+  <br><br><br><br>
+
+  <!-- Product Description Start -->
+  <div class="container product-description">
+    <div class="write-section">
+      <div class="verticle"></div>
+      <div class="filter">
+        {{"Product Specifications" | translate}}
+      </div>
+    </div>
+    <p>
+      {{productDetails.description}}
+    </p>
+  </div>
+  <br><br>
+  <div class="container product-description">
+    <div class="write-section">
+      <div class="verticle"></div>
+      <div class="filter">
+        {{"Safety Warnings" | translate}}
+      </div>
+    </div>
+    <ul>
+      <li><i class="fas fa-circle "></i>{{"See the information page." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Clean the surface." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Drying: 30-35 min." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Use a mask." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Mixing ratio: 100:2-3." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Infrared: 5 dk." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Protect from the sun." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Application: 5-8 min." | translate}}</li>
+      <li><i class="fas fa-circle "></i>{{"Sanding: 1. P80-P180 / 2. P180-P280." | translate}}</li>
+    </ul>
+  </div>
+  <!-- Product Description End -->
+
+
+  <!-- Modal Section Start -->
+  <!-- Button trigger modal -->
+  <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button id="my-modal-close" (click)="resetForm()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="orderAddForm">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img src="{{firstproductImage}}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h5 class="card-title">{{productDetails.name}}</h5>
+                  <p class="card-text" style="height: 150px; overflow-y: scroll">{{productDetails.description}}</p>
+                </div>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush mt-4">
+              <li class="list-group-item"><span style="font-size: 18px;  font-weight: 500">Ürün Adı :</span> &nbsp; {{productDetails.name}}</li>
+              <li class="list-group-item"><span style="font-size: 18px; font-weight: 500">Marka :</span> &nbsp; {{productDetails.brandName}}</li>
+              <li class="list-group-item"><span style="font-size: 18px; font-weight: 500">Renk :</span> &nbsp; {{productDetails.colorName}}</li>
+            </ul>
+            <p style="text-align: center; text-align: center; font-size: 14px" class="mt-4">Bu ürünü sipariş vermek istiyorsanız aşağıdaki bilgileri doldurup 'Sipariş Ver'e tıklayın. 24 saat içinde geri dönüş telefon numaranız üzerinden sağlanacaktır.</p>
+
+            <div style="display: flex; flex-direction: column; align-items: center;" class="mt-4">
+              <!-- Stock Section Start -->
+              <span
+                *ngIf="
+      !orderAddForm.get('UnitAmount')?.valid &&
+      orderAddForm.get('UnitAmount')?.touched
+    " class="help-block">Lütfen geçerli bir stok giriniz.</span
+              >
+              <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3" style="width: 120px"
+    >Stok</span
+    >
+                <input
+                  class="form-control"
+                  type="number"
+                  aria-describedby="basic-addon1"
+                  formControlName="unitAmount"
+                />
+              </div>
+              <!-- Stock Section End -->
+
+              <!-- Name Surname Section Start -->
+              <span
+                *ngIf="
+            !orderAddForm.get('SenderNameSurname')?.valid &&
+            orderAddForm.get('SenderNameSurname')?.touched
+          " class="help-block">Lütfen geçerli bir ad soyad giriniz.</span>
+              <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon4" style="width: 120px"
+          >Ad Soyad</span
+          >
+                <input
+                  class="form-control"
+                  type="text"
+                  aria-describedby="basic-addon1"
+                  formControlName="senderNameSurname"
+                />
+              </div>
+              <!-- Name Surname Section End -->
+
+              <!-- Email Section Start -->
+              <span
+                *ngIf="
+            !orderAddForm.get('SenderMail')?.valid &&
+            orderAddForm.get('SenderMail')?.touched
+          "
+                class="help-block"
+              >Lütfen geçerli bir mail adresi giriniz.</span
+              >
+              <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon5" style="width: 120px"
+          >Email</span
+          >
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-describedby="basic-addon1"
+                  formControlName="senderMail"
+                />
+              </div>
+              <!-- Email Section End -->
+
+              <!-- Tel No Section Start -->
+              <span
+                *ngIf="
+          !orderAddForm.get('SenderPhone')?.valid &&
+          orderAddForm.get('SenderPhone')?.touched
+        "
+                class="help-block"
+              >Lütfen geçerli bir telefon numarası giriniz.</span
+              >
+              <div class="input-group mb-3" style="margin-bottom: 20px;">
+        <span class="input-group-text" id="basic-addon6" style="width: 120px"
+        >Tel No</span
+        >
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-describedby="basic-addon1"
+                  formControlName="senderPhone"
+                />
+              </div>
+              <!-- Tel No Section End -->
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="orderAdd()">Sipariş Ver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Section End -->
+</div>
+
+
+<!-- Owl Product Two -->
+<br><br><br><br>
+
+<div class="container p-0 product-section">
+  <div class="write-section p-0">
+    <div class="verticle"></div>
+    <div class="filter">
+      {{"Those Who Bought This Product Also Bought Them" | translate}}
+    </div>
+  </div>
+  <div class="owl-carousel-product-two owl-theme ">
+    <owl-carousel-o [options]="owlOptions_product">
+      <ng-template carouselSlide *ngFor="let product of products">
+        <div class="item " (dblclick)="setCurrentProduct(product)">
+          <div class="card " style="width: 18rem; ">
+            <div class="card-img ">
+              <img *ngIf="product.productImage" [src]="apiUrl + product.productImage" class="card-img-top " alt="... ">
+            </div>
+            <div class="card-body">
+              <span>{{product.categoryName}}</span><br>
+              <a (click)="setCurrentProduct(product)">{{product.name}}</a><br>
+              <span>{{product.unitPrice}}</span>
+              <span>+</span>
+            </div>
+            <div class="m-auto mt-2 w-100">
+              <a *ngIf="userIsAdmin" href="productUpdate/ + {{product.id}}" class="btn btn-success my-btn">Ürün Güncelle</a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <br><br><br>
+  <div class="write-section">
+    <div class="verticle"></div>
+    <div class="filter">
+      {{"New Products" | translate}}
+    </div>
+  </div>
+  <div class="owl-carousel-product-two owl-theme ">
+    <owl-carousel-o [options]="owlOptions_product">
+      <ng-template carouselSlide *ngFor="let product of productsReverse">
+        <div class="item " (dblclick)="setCurrentProduct(product)">
+          <div class="card " style="width: 18rem; ">
+            <div class="card-img">
+              <img *ngIf="product.productImage" [src]="apiUrl + product.productImage" class="card-img-top " alt="... ">
+            </div>
+            <div class="card-body">
+              <span>{{product.categoryName}}</span><br>
+              <a (click)="setCurrentProduct(product)">{{product.name}}</a><br>
+              <span>{{product.unitPrice}}</span>
+              <span>+</span>
+            </div>
+            <div class="m-auto mt-2 w-100">
+              <a *ngIf="userIsAdmin" href="productUpdate/ + {{product.id}}" class="btn btn-success my-btn">Ürün Güncelle</a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <br><br><br>
+  <div class="write-section">
+    <div class="verticle"></div>
+    <div class="filter">
+      {{"Discounted Products for Bulk Shopping" | translate}}
+    </div>
+  </div>
+  <div class="owl-carousel-product-two owl-theme ">
+    <owl-carousel-o [options]="owlOptions_product">
+      <ng-template carouselSlide *ngFor="let product of products">
+        <div class="item" (dblclick)="setCurrentProduct(product)">
+          <div class="card " style="width: 18rem; ">
+            <div class="card-img ">
+              <img *ngIf="product.productImage" [src]="apiUrl + product.productImage" class="card-img-top " alt="... ">
+            </div>
+            <div class="card-body ">
+              <span>{{product.categoryName}}</span><br>
+              <a (click)="setCurrentProduct(product)">{{product.name}}</a><br>
+              <span>{{product.unitPrice}}</span>
+              <span>+</span>
+            </div>
+            <div class="m-auto mt-2 w-100">
+              <a *ngIf="userIsAdmin" href="productUpdate/ + {{product.id}}" class="btn btn-success my-btn">Ürün Güncelle</a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<!-- Owl Product Two -->
+
+<!-- DetailsPage Blog Start -->
+<div class="container product-blog">
+  <div class="row">
+    <div class="col-md-6 img-big-section">
+      <div class="img card-1">
+        <img src="assets/IMAGES/blog-img/pexels-sharon-mccutcheon-1148998.jpg" alt="">
+      </div>
+    </div>
+    <div class="col-md-6 img-small-section">
+      <div class="row p-0 m-0 img-small">
+        <div class="col-md-6">
+          <div class="img card-2">
+            <img src="assets/IMAGES/blog-img/pexels-sharon-mccutcheon-1174932.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img card-3">
+            <img src="assets/IMAGES/blog-img/pexels-pixabay-159045.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img card-4">
+            <img src="assets/IMAGES/blog-img/pexels-sharon-mccutcheon-1174932.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img card-5">
+            <img src="assets/IMAGES/blog-img/pexels-pixabay-159045.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+<!-- DetailsPage Blog End -->

@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar{
+  box-shadow: rgba(16, 16, 16, 0.3) 0px 1px 7px;
+  height: 80px;
+  transition: 0.5s;
+}
+.navbar.sticky{
+  height: 60px;
+  background-color: #000 !important;
+}
+@media(max-width:992px){
+  .navbar{
+    background-color: #fff !important;
+  }
+  .navbar .container{
+    transition: 0.5s;
+    background-color: #fff !important;
+  }
+  .navbar.sticky .container{
+    background-color: #000 !important;
+  }
+}
+.navbar .container a{
+  color: #000 ;
+}
+
+.color-change{
+  color: blue !important;
+}
+
+.navbar.sticky .container a{
+  color: #fff !important;
+}
+.navbar .container .dropdown-menu{
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.navbar.sticky .container .dropdown-menu{
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.navbar .container .nav-item{
+  margin: 0 15px;
+}
+.navbar .navbar-toggler{
+  border: 0px;
+}
+.navbar .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.99%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar.sticky .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 255.99%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar .flag-img{
+  position: absolute;
+  top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 25px;
+}
+
+.navbar.sticky .flag-img{
+  top: 5px;
+}
+
+.navbar .flag-img img{
+  margin: 7px 8px;
+  height: 35px;
+  object-fit: cover;
+  cursor: pointer;
+}
+

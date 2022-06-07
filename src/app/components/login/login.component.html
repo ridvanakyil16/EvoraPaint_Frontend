@@ -1,0 +1,26 @@
+<br><br><br><br><br>
+<!-- Login Section Start -->
+<main class="form-signin">
+    <form [formGroup]="loginForm">
+        <h1 class="text-center"><i class="fas fa-users-cog"></i></h1>
+        <h1 class="h3 mb-3 fw-normal text-center">{{"Please sign in" | translate}}</h1>
+
+        <div class="form-floating">
+            <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">{{"E-Mail" | translate}}</label>
+        </div>
+        <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">{{"Password" | translate}}</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+          <input type="checkbox" value="remember-me"> {{"Remember me" | translate}}
+        </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary mb-5" (click)="login()">{{"Login" | translate}}</button>
+    </form>
+</main>
+
+<!-- Login Section End -->

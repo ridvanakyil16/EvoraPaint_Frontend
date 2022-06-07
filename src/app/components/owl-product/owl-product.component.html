@@ -1,0 +1,43 @@
+<!-- Owl Carousel Product Start -->
+<div class="owl-top">
+    <h1 class="owl-title"><span>New</span> <span> and High Quality</span></h1>
+    <br>
+</div>
+
+<div id="astar" *ngFor="let category of data | keyvalue" class="owl-carousel-section anchor">
+    <div class="write-section">
+        <div class="verticle">
+        </div>
+        <div class="filter">
+            <div class="div">{{category.key}}</div>
+        </div>
+    </div>
+
+    <div class="owl-section">
+        <div class="owl-carousel-product">
+          <owl-carousel-o [options]="owlOptions_product">
+            <ng-template carouselSlide *ngFor="let product of category.value ">
+              <div class="item">
+                <div class="card" style="width: 18rem;" (dblclick)="setCurrentProduct(product)">
+                  <div class="card-img">
+                    <img *ngIf="product.productImage" [src]="apiUrl + product.productImage" class="card-img-top" alt="...">
+                    <img class="img-2" src="assets/IMAGES/product_img/img-2.png" alt="">
+                  </div>
+                  <div class="card-body">
+                    <span>{{product.categoryName}}</span><br>
+                    <a routerLink="/product/{{product.id}}">{{product.name | translate}}</a><br>
+                    <span>{{product.unitPrice}}</span>
+                    <span>+</span>
+                  </div>
+                  <div class="m-auto mt-2 w-100">
+                    <a *ngIf="userIsAdmin" href="productUpdate/{{product.id}}" class="btn btn-success my-btn">Ürün Güncelle</a>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+        <br><br>
+    </div>
+</div>
+

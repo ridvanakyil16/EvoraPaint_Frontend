@@ -1,0 +1,46 @@
+<br><br><br><br><br>
+
+<!-- Parallax One Start -->
+<div class="parallax-one">
+    <div class="section-one">
+        <div class="content-section">
+            <div class="in-content-one"></div>
+            <div class="in-content-two">
+                <span>$ 29.95</span><br>
+                <span>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Sapiente, illo.</span><br>
+                <button>
+                Add To Blog
+            </button>
+            </div>
+        </div>
+        <div class="img-section">
+            <button>
+            Add To Blog
+        </button>
+            <!-- <img src="assets/IMAGES/banner-img/_Pngtree_classic_blue_paint_bucket_3d_5302594-removebg-preview.png" alt=""> -->
+        </div>
+    </div>
+    <div class="section-two">
+        <div class="owl-carousel-parallax owl-theme">
+            <owl-carousel-o [options]="owlOptions_parallax_product">
+                <ng-template carouselSlide *ngFor="let product of products">
+                    <div class="item">
+                        <div class="box">
+                            <div class="img-section">
+                                <img src="assets/IMAGES/product_img/img_9.png" alt="">
+                            </div>
+                            <div class="content-section">
+                                <div class="border"></div>
+                                <span>{{product.name}}</span>
+                                <h5>{{product.unitPrice}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+<!-- Parallax One End -->
+
+<br><br><br><br><br>

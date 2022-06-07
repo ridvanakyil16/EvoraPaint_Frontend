@@ -1,0 +1,214 @@
+ /* Parallax One Start */
+ 
+ .parallax-one {
+     background-color: #EAEBEF;
+     width: 100%;
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .parallax-one .section-one {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 350px;
+ }
+ 
+ .parallax-one .section-two {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 150px;
+ }
+ 
+ .parallax-one .content-section {
+     width: 50%;
+     height: 100%;
+     display: flex;
+ }
+ 
+ .parallax-one .in-content-one {
+     width: 30%;
+     height: 100%;
+ }
+ 
+ .parallax-one .in-content-two {
+     width: 70%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     color: #000;
+ }
+ 
+ .parallax-one .in-content-two span:nth-child(1) {
+     font-size: 20px;
+     color: #000;
+     font-weight: 600;
+     margin-bottom: 15px;
+ }
+ 
+ .parallax-one .in-content-two span:nth-child(3) {
+     font-size: 13px;
+     font-weight: 500;
+ }
+ 
+ .parallax-one .in-content-two button {
+     margin-top: 30px;
+ }
+ 
+ .parallax-one .img-section {
+     width: 50%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+ }
+ 
+ .parallax-one .img-section img {
+     height: 150%;
+ }
+ 
+ .parallax-one .content-section button {
+     border: none;
+     font-size: 10px;
+     padding: 10px 30px;
+     color: #fff;
+     background-color: #FD0000;
+ }
+ 
+ .parallax-one .img-section button {
+     position: absolute;
+     top: 10%;
+     right: 0%;
+     padding: 15px 90px 15px 40px;
+     background-color: #000;
+     border: none;
+     color: #fff;
+     font-size: 14px;
+ }
+ 
+ .owl-carousel-parallax {
+     width: 70%;
+     padding: 0 50px;
+     position: relative;
+ }
+ 
+ .owl-carousel-parallax .item {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .owl-carousel-parallax .item .box {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 400px;
+     height: 100px;
+     background-color: #fff;
+     border-radius: 10px;
+ }
+ 
+ @media(max-width:500px) {
+     .owl-carousel-parallax {
+         width: 90%;
+         padding: 0px;
+     }
+     .owl-carousel-parallax .item .box {
+         width: 300px;
+     }
+ }
+ 
+ .owl-carousel-parallax .item .box .img-section {
+     width: 35%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .owl-carousel-parallax .item .box .img-section img {
+     height: 90%;
+ }
+ 
+ .owl-carousel-parallax .item .box .content-section {
+     width: 65%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     padding: 10px 20px;
+     position: relative;
+ }
+ 
+ .owl-carousel-parallax .item .box .content-section .border {
+     width: 2px;
+     height: 50%;
+     position: absolute;
+     top: 25%;
+     left: 0;
+     background-color: #000;
+ }
+ 
+ .owl-carousel-parallax .item .box .content-section h5 {
+     margin: 0;
+ }
+ 
+ .owl-carousel-parallax .owl-nav {
+     position: absolute;
+     top: -50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 98%;
+ }
+ 
+ .owl-carousel-parallax .owl-nav .owl-prev {
+     position: absolute;
+     left: 0;
+     display: block;
+     color: #000 !important;
+     font-size: 100px !important;
+     font-weight: 100 !important;
+ }
+ 
+ .owl-carousel-parallax .owl-nav .owl-prev:hover {
+     background-color: transparent;
+     color: #fff !important;
+ }
+ 
+ .owl-carousel-parallax .owl-nav .owl-next {
+     position: absolute;
+     right: 0;
+     display: block;
+     color: #000 !important;
+     font-size: 100px !important;
+     font-weight: 100 !important;
+ }
+ 
+ .owl-carousel-parallax .owl-nav .owl-next:hover {
+     background-color: transparent;
+     color: #fff !important;
+ }
+ 
+ @media(max-width:500px) {
+     .owl-carousel-parallax {
+         max-width: 850px;
+         padding: 0 25px;
+         position: relative;
+     }
+     .owl-carousel-parallax .owl-nav {
+         display: none;
+     }
+ }
+ /* Parallax One End */

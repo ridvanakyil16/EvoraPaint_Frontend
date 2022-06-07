@@ -1,0 +1,114 @@
+<br><br><br><br><br><br>
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <h4 style="margin-bottom: 20px">Ürün Ekle</h4>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="formForNames">
+
+          <span *ngIf="!productAddForm.get('sameProductName')?.valid && productAddForm.get('sameProductName')?.touched" class="help-block">Lütfen geçerli bir ürün giriniz.</span>
+
+          <div *ngIf="this.language?.id != 1" class="input-group mb-3 input-width">
+            <span class="input-group-text" id="basic-addon1">Ürünün Türkçesini Seçin</span>
+            <select (change)="getProductByName($event)" formControlName="sameProductName" class="form-select" aria-label="Default select example">
+              <option *ngFor="let product of products">
+                {{ product.name }}
+              </option>
+            </select>
+          </div>
+
+          <span *ngIf="!productAddForm.get('languageName')?.valid && productAddForm.get('languageName')?.touched " class="help-block">Lütfen geçerli bir dil giriniz.</span>
+
+          <div class="input-group mb-3 input-width">
+              <span class="input-group-text" id="basic-addon1">Dil</span>
+              <select id="myDropdown" (change)="getLanguagesName($event)" formControlName="languageName" class="form-select" aria-label="Default select example">
+                <option *ngFor="let lang of languages">
+                  {{ lang.name }}
+                </option>
+              </select>
+          </div>
+
+          <span *ngIf="!formForNames.get('categoryName')?.valid && formForNames.get('categoryName')?.touched" class="help-block">Lütfen geçerli bir kategori seçiniz.</span>
+
+          <div class="input-group mb-3 input-width">
+            <span class="input-group-text" id="basic-addon1">Kategori</span>
+            <select (change)="getCategoryByName($event)" formControlName="categoryName" class="form-select" aria-label="Default select example">
+              <option *ngFor="let cat of categories">
+                {{ cat.name }}
+              </option>
+            </select>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="productAddForm">
+
+          <span *ngIf="!productAddForm.get('brandName')?.valid && productAddForm.get('brandName')?.touched" class="help-block">Lütfen geçerli bir marka seçiniz.</span>
+
+        <div class="input-group mb-3 input-width">
+          <span class="input-group-text" id="basic-addon2">Marka</span>
+          <input class="form-control" type="text" aria-describedby="basic-addon1" formControlName="brandName"/>
+        </div>
+
+          <span *ngIf="!productAddForm.get('colorName')?.valid && productAddForm.get('colorName')?.touched" class="help-block">Lütfen geçerli bir renk seçiniz.</span>
+
+        <div class="input-group mb-3 input-width">
+          <span class="input-group-text" id="basic-addon3">Renk</span>
+          <input class="form-control" type="text" aria-describedby="basic-addon1" formControlName="colorName"/>
+        </div>
+
+          <span *ngIf="!productAddForm.get('name')?.valid && productAddForm.get('name')?.touched" class="help-block">Lütfen geçerli bir ürün adı seçiniz.</span>
+
+        <div class="input-group mb-3 input-width">
+          <span class="input-group-text" id="basic-addon4">Ürün Adı</span>
+          <input class="form-control" type="text" aria-describedby="basic-addon1" formControlName="name" />
+        </div>
+
+        <span *ngIf="!productAddForm.get('description')?.valid && productAddForm.get('description')?.touched " class="help-block">Lütfen geçerli bir Açıklama giriniz.</span>
+
+        <div class="input-group mb-3 input-width">
+          <span class="input-group-text" id="basic-addon6">Ürün Özellikleri</span>
+          <textarea class="form-control" formControlName="description" rows="1"></textarea>
+        </div>
+
+          <span *ngIf="!productAddForm.get('unitPrice')?.valid && productAddForm.get('unitPrice')?.touched " class="help-block">Lütfen geçerli bir fiyat giriniz.</span>
+
+        <div class="input-group mb-3 input-width">
+          <span class="input-group-text" id="basic-addon7">Fiyat</span>
+          <input type="number" class="form-control" aria-describedby="basic-addon1" formControlName="unitPrice" step="0.01" min="0" />
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="this.language?.id == 1" class="row">
+    <div class="d-flex justify-content-center">
+      <form [formGroup]="imageFormProduct">
+        <div class=" mb-3 input-width">
+          <label for="formFileMultiple" class="form-label">Ürününüz için birden fazla resim seçebilirsiniz...</label>
+
+          <input class="form-control" type="file" id="formFileMultiple" formControlName="image" multiple (change)="onFileChange($event)" />
+
+          <input class="form-control visually-hidden" type="text" id="formFileMultiple" formControlName="fileSource" multiple />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary button-width" (click)="productAdd()">
+        Ekle
+      </button>
+    </div>
+  </div>
+
+  <br><br>
