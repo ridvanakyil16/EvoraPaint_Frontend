@@ -58,9 +58,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Mobil
 <p align="center"> 
 <span>
-<img src="https://am4pap001files.storage.live.com/y4mzC7x4FLvWvH31nZkeXhhvIZcCovNkoE3_UrwtpGbu1Vi7B7MCOwDUCO1uvchHWoJ3l9mHeabMn0V01YXbFlGz5lih38nGHhVhuEgCW1TkDANk2CzrSbc3c6uXNcVUdW4IUhCMv5-ztm_HKEbbXu8ytV1r36g0ZLLOKjnUzKHl_gK-OwB-3-cycvhUvPUzzeRmrddn-Hskzsi6DCsqlhnjOkQ82tR2zDfhUmhR8ZBcGk?encodeFailures=1&width=275&height=601" width="30%" height="auto"></span>
+<img src="https://am4pap001files.storage.live.com/y4mzC7x4FLvWvH31nZkeXhhvIZcCovNkoE3_UrwtpGbu1Vi7B7MCOwDUCO1uvchHWoJ3l9mHeabMn0V01YXbFlGz5lih38nGHhVhuEgCW1TkDANk2CzrSbc3c6uXNcVUdW4IUhCMv5-ztm_HKEbbXu8ytV1r36g0ZLLOKjnUzKHl_gK-OwB-3-cycvhUvPUzzeRmrddn-Hskzsi6DCsqlhnjOkQ82tR2zDfhUmhR8ZBcGk?encodeFailures=1&width=275&height=601" width="26.5%" height="auto"></span>
 <span>
-<img src="https://am4pap001files.storage.live.com/y4m0tYaN4YcpxWp-VpPGVQm8wOspISc82PaaMH_HFibboJ9_TM7_qLpgkX2vOtahE9FRq9LmQtJVCZU-388e6rYNlIorlAOoeMOenpmp_5wRVDDznDegmN8wfvQclDkv23TkI0fo7BDza0gqwdibB0ibOmpK8SqPcO1SWiGQACBAd9_FYrkDybwg1Rk73ErAKkIPez4O9tEWe6PnNfaiK9gSfYCmTTLlHBdVwSOCQ5PzC0?encodeFailures=1&width=276&height=601" width="30%" height="auto"></span>
+<img src="https://am4pap001files.storage.live.com/y4m0tYaN4YcpxWp-VpPGVQm8wOspISc82PaaMH_HFibboJ9_TM7_qLpgkX2vOtahE9FRq9LmQtJVCZU-388e6rYNlIorlAOoeMOenpmp_5wRVDDznDegmN8wfvQclDkv23TkI0fo7BDza0gqwdibB0ibOmpK8SqPcO1SWiGQACBAd9_FYrkDybwg1Rk73ErAKkIPez4O9tEWe6PnNfaiK9gSfYCmTTLlHBdVwSOCQ5PzC0?encodeFailures=1&width=276&height=601" width="26.5%" height="auto"></span>
 <span>
-<img src="https://am4pap001files.storage.live.com/y4mpAxJdohQeG6I4dUfGvrITPgEbcJjMqE7iibHGKlgSPBefOxq3bgUP5ePuA5ExVtZgbu173Jq3K7IayLfT_880cUSoDzOgJl4PIEYacmiDQi30zKYvE7LY_DL1Sk4IjOEsyzmScPqU5v-D3y2m2sny4U7B8RCI6cGTIJfV22nfC_ofxsQ39UkrETTVLHjKn5smjrsIg2tfpywTJvG4l9cou661qT3-8S5XUnMCPoFKYk?encodeFailures=1&width=278&height=601" width="30%" height="auto"></span>
+<img src="https://am4pap001files.storage.live.com/y4mpAxJdohQeG6I4dUfGvrITPgEbcJjMqE7iibHGKlgSPBefOxq3bgUP5ePuA5ExVtZgbu173Jq3K7IayLfT_880cUSoDzOgJl4PIEYacmiDQi30zKYvE7LY_DL1Sk4IjOEsyzmScPqU5v-D3y2m2sny4U7B8RCI6cGTIJfV22nfC_ofxsQ39UkrETTVLHjKn5smjrsIg2tfpywTJvG4l9cou661qT3-8S5XUnMCPoFKYk?encodeFailures=1&width=278&height=601" width="26.5%" height="auto"></span>
 </p>
